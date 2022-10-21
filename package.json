@@ -1,0 +1,47 @@
+{
+	"name": "rezrvapp-api",
+	"version": "1.0.0",
+	"description": "",
+	"main": "server.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"run": "NODE_ENV=development CORS_ORIGIN=http://localhost:4200 MONGO_URL=localhost:27017 MONGO_PASSWORD=PT1CDOhK986pjp9Mzf47dOvttWZag5 JWT_SECRET=P5NNbmswaHM0OFmh779CFe1xjA295z SENDGRID_KEY=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 TZ=UTC node ./dist/server.js",
+		"start": "NODE_ENV=development CORS_ORIGIN=http://localhost:4200 MONGO_URL=localhost:27017 MONGO_PASSWORD=PT1CDOhK986pjp9Mzf47dOvttWZag5 JWT_SECRET=P5NNbmswaHM0OFmh779CFe1xjA295z SENDGRID_KEY=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 TZ=UTC ts-node-dev --respawn --transpile-only ./src/server.ts",
+		"test-harness": "NODE_ENV=development CORS_ORIGIN=http://localhost:4200 MONGO_URL=localhost:27017 MONGO_PASSWORD=PT1CDOhK986pjp9Mzf47dOvttWZag5 JWT_SECRET=P5NNbmswaHM0OFmh779CFe1xjA295z SENDGRID_KEY=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 TZ=UTC ts-node-dev --respawn --transpile-only ./src/test-harness.ts",
+		"build": "tsc",
+		"build:prod": "tsc -p tsconfig.prod.json"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@gitlab.com/rezrv-app/rezrvapp-api.git"
+	},
+	"author": "jake",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://gitlab.com/rezrv-app/rezrvapp-api/issues"
+	},
+	"homepage": "https://gitlab.com/rezrv-app/rezrvapp-api#readme",
+	"dependencies": {
+		"@sendgrid/mail": "^7.6.2",
+		"bcrypt": "^5.0.1",
+		"cors": "^2.8.5",
+		"express": "^4.17.1",
+		"helmet": "^5.0.2",
+		"ics": "^2.35.0",
+		"joi": "^17.4.0",
+		"jsonwebtoken": "^8.5.1",
+		"mongoose": "^6.2.11",
+		"node-cron": "^3.0.0",
+		"winston": "^3.3.3",
+		"winston-daily-rotate-file": "^4.5.1"
+	},
+	"devDependencies": {
+		"@types/body-parser": "^1.19.0",
+		"@types/cors": "^2.8.10",
+		"@types/express": "^4.17.11",
+		"@types/jsonwebtoken": "^8.5.1",
+		"@types/node-cron": "^3.0.0",
+		"ts-node-dev": "^1.1.6",
+		"typescript": "^4.2.3"
+	}
+}
